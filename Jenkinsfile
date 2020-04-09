@@ -14,7 +14,7 @@ pipeline {
                  //   sh 'pip install chaostoolkit'
                  //   sh 'chaos --version'
                  //   sh 'pip install -U chaostoolkit-spring'
-                    }
+                   // }
                 }
             }
         stage('Build') {
