@@ -7,9 +7,15 @@ pipeline {
        JAVA_HOME = '/usr/lib/jvm/java-8-openjdk-amd64'
         }
     stages {
+        stage('chaos') { 
+            steps {
+                withPythonEnv('/usr/bin/python3.6') {
+                // Creates the virtualenv before proceeding
+                sh 'source ~/.venvs/chaostk/bin/activate'
+                }
+            }
         stage('Build') {
             steps {
-                sh 'source ~/.venvs/chaostk/bin/activate'
                 sh 'mvn -B -DskipTests clean package'
             }
         }
@@ -17,7 +23,10 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
-            post {
+            post {stage('Deliver') { 
+            steps {
+                sh './jenkins/scripts/deliver.sh' 
+            }
                 always {
                     junit 'target/surefire-reports/*.xml'
                 }
