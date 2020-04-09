@@ -11,20 +11,16 @@ pipeline {
             steps {
                 withPythonEnv('/usr/bin/python3.6') {
                 // Creates the virtualenv before proceeding
-                    sh 'pip uninstall -y chaostoolkit'
-                    //sh 'chaos --version'
-                    //sh 'pip install chaostoolkit'
-                    //sh 'pip install -U chaostoolkit-spring'
+                    sh 'pip install chaostoolkit'
+                    sh 'pip install -U chaostoolkit-spring'
+                    sh 'chaos --version'
                     }
                 }
             }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
-                 withPythonEnv('/usr/bin/python3.6') {
-                // Creates the virtualenv before proceeding
-                    sh 'chaos --version'
-                    }
+                 
             }
         }
         stage('Test') {
