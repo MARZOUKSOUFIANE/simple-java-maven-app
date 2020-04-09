@@ -2,6 +2,10 @@ pipeline {
     agent any
     options {
         skipStagesAfterUnstable()
+        
+    environment {
+       JAVA_HOME = '/usr/lib/jvm/java-8-openjdk-amd64'
+        }
     }
     stages {
         stage('Build') {
