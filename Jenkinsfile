@@ -9,6 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'source ~/.venvs/chaostk/bin/activate'
                 sh 'mvn -B -DskipTests clean package'
             }
         }
