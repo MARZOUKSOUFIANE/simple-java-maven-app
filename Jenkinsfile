@@ -13,7 +13,7 @@ pipeline {
                 // Creates the virtualenv before proceeding
                     //sh 'pip uninstall -y chaostoolkit'
                     //sh 'chaos --version'
-                    sh 'pip uninstall -y chaostoolkit'
+                    sh 'pip install chaostoolkit'
                     sh 'pip install -U chaostoolkit-spring'
                     }
                 }
