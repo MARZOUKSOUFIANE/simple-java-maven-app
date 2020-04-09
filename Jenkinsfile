@@ -9,11 +9,11 @@ pipeline {
     stages {
         stage('chaos') { 
             steps {
-                withPythonEnv('/usr/bin/python3.6') {
+                //withPythonEnv('/usr/bin/python3.6') {
                 // Creates the virtualenv before proceeding
-                    sh 'pip install chaostoolkit'
-                    sh 'chaos --version'
-                    sh 'pip install -U chaostoolkit-spring'
+                 //   sh 'pip install chaostoolkit'
+                 //   sh 'chaos --version'
+                 //   sh 'pip install -U chaostoolkit-spring'
                     }
                 }
             }
