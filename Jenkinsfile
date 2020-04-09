@@ -7,16 +7,16 @@ pipeline {
        JAVA_HOME = '/usr/lib/jvm/java-8-openjdk-amd64'
         }
     stages {
-        stage('chaos') { 
-            steps {
+        //stage('chaos') { 
+           // steps {
                 //withPythonEnv('/usr/bin/python3.6') {
                 // Creates the virtualenv before proceeding
                  //   sh 'pip install chaostoolkit'
                  //   sh 'chaos --version'
                  //   sh 'pip install -U chaostoolkit-spring'
                    // }
-                }
-            }
+              //  }
+           // }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
