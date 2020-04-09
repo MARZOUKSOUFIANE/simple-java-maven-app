@@ -11,7 +11,7 @@ pipeline {
             steps {
                 withPythonEnv('/usr/bin/python3.6') {
                 // Creates the virtualenv before proceeding
-                   sh 'source ~/.venvs/chaostk/bin/activate'
+                   sh 'python3 -m venv ~/.venvs/chaostk'
                     }
                 }
             }
