@@ -20,6 +20,10 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
+                 withPythonEnv('/usr/bin/python3.6') {
+                // Creates the virtualenv before proceeding
+                    sh 'chaos --version'
+                    }
             }
         }
         stage('Test') {
