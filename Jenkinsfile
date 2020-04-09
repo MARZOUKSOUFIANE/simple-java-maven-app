@@ -19,6 +19,7 @@ pipeline {
             }
         stage('Build') {
             steps {
+                sh 'docker pull redis'
                 sh 'mvn -B -DskipTests clean package'
                  
             }
