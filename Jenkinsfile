@@ -11,10 +11,10 @@ pipeline {
             steps {
                 withPythonEnv('/usr/bin/python3.6') {
                 // Creates the virtualenv before proceeding
-                    //sh 'pip uninstall -y chaostoolkit'
+                    sh 'pip uninstall -y chaostoolkit'
                     //sh 'chaos --version'
-                    sh 'pip install chaostoolkit'
-                    sh 'pip install -U chaostoolkit-spring'
+                    //sh 'pip install chaostoolkit'
+                    //sh 'pip install -U chaostoolkit-spring'
                     }
                 }
             }
