@@ -11,8 +11,8 @@ pipeline {
             steps {
                 withPythonEnv('/usr/bin/python3.6') {
                 // Creates the virtualenv before proceeding
-                   sh 'python3 -m venv .venvs/chaostk'
-                   sh ' sudo .venvs/chaostk/bin/activate'
+                    sh 'pip install chaostoolkit'
+                    sh 'chaos --version'
                     }
                 }
             }
